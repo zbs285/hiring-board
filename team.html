@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>团队进展 · 招聘看板</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%23660874'/%3E%3Ctext x='50' y='68' font-size='52' text-anchor='middle' fill='white' font-family='sans-serif'%3E清%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header class="page-head" id="pageHead">
+  <div class="page-head-inner">
+    <a class="back-link" href="index.html">← 返回首页</a>
+    <h1 id="teamName">加载中…</h1>
+    <div class="lead-line" id="teamMeta"></div>
+  </div>
+</header>
+
+<main class="main-narrow" id="teamPage">
+
+  <div id="stdView">
+    <div class="filter-bar">
+      <input type="text" id="fSearch" placeholder="🔍 搜索候选人 / 面试官 / 备注…">
+      <select id="fType"><option value="">全部类型</option></select>
+      <select id="fSource"><option value="">全部来源</option></select>
+      <select id="fStatus"><option value="">全部状态</option>
+        <option value="offer">Offer/入职</option>
+        <option value="run">流程中</option>
+        <option value="hold">暂缓</option>
+        <option value="fail">不通过</option>
+        <option value="quit">已退出</option>
+        <option value="new">待推进</option>
+      </select>
+      <select id="fMark"><option value="">全部标记</option>
+        <option value="意向">🔴 意向</option>
+        <option value="流程中">⚪ 流程中</option>
+        <option value="待入职">🟢 待入职</option>
+        <option value="已入职">🔵 已入职</option>
+        <option value="淘汰/长期跟踪">⚫ 淘汰/长期跟踪</option>
+      </select>
+      <button class="density-btn" id="densityBtn" title="切换信息密度：紧凑模式同屏显示更多人"></button>
+      <span class="filter-count" id="filterCount"></span>
+    </div>
+
+    <div class="mk-legend" id="markLegend"></div>
+    <div class="legend" id="statusChips"></div>
+
+    <div class="tbl-wrap">
+      <table class="tbl" id="stdTable">
+        <thead>
+          <tr>
+            <th rowspan="2">候选人</th>
+            <th rowspan="2">类型</th>
+            <th colspan="6" class="grp">状态记录</th>
+            <th rowspan="2">备注</th>
+            <th rowspan="2" id="thSource">来源</th>
+          </tr>
+          <tr>
+            <th>一轮面试官</th><th>一轮结果</th>
+            <th>二轮面试官</th><th>二轮结果</th>
+            <th>三轮面试官</th><th>三轮结果</th>
+          </tr>
+        </thead>
+        <tbody id="teamTableBody"></tbody>
+        <tbody>
+          <tr id="emptyRow" style="display:none">
+            <td colspan="10" style="text-align:center;padding:36px;color:#8071a0">
+              没有符合筛选条件的候选人
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div id="ovView" style="display:none"></div>
+  <div id="nrView" style="display:none"></div>
+</main>
+
+<footer class="foot">内部数据 · 请勿外传</footer>
+
+<script src="app-data.js"></script>
+<script src="assets/app.js"></script>
+<script>renderTeam();</script>
+</body>
+</html>

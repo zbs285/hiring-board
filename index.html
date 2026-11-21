@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>招聘进展看板</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%23660874'/%3E%3Ctext x='50' y='68' font-size='52' text-anchor='middle' fill='white' font-family='sans-serif'%3E清%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="hero-kicker">HIRING PROGRESS</div>
+    <h1>招聘进展看板</h1>
+    <p class="hero-sub">各团队的招聘实时进展 · 点击团队卡片查看每位候选人的面试记录</p>
+    <div class="hero-meta" id="heroMeta"></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section id="overallStats" class="stats-row"></section>
+
+  <section class="section-title">
+    <h2>团队进展</h2>
+    <p>数据由各团队负责人持续更新</p>
+  </section>
+
+  <section id="teamGrid" class="team-grid"></section>
+</main>
+
+<footer class="foot">内部数据 · 请勿外传</footer>
+
+<script src="app-data.js"></script>
+<script src="assets/app.js"></script>
+<script>renderIndex();</script>
+</body>
+</html>
